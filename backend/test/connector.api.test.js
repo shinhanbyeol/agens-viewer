@@ -1,5 +1,4 @@
 const app = require('../server/app');
-const supertest = require('supertest');
 const session = require('supertest-session');
 const assert = require('assert').strict;
 
@@ -14,8 +13,9 @@ let connectParam = {
     password: 'bitnine123!',
 };
 
-describe('Database Api Test !', () => {
+describe('Connector Api Test !', () => {
     let mappingUrl = '/api/v1/db';
+
     it('Connect API', (done) => {
         request
             .post(`${mappingUrl}/connect`)
@@ -38,5 +38,31 @@ describe('Database Api Test !', () => {
                 assert.deepStrictEqual(res.body.data, connectParam);
                 return done();
             });
+    });
+
+    describe('DatabaseMetadata Api Test !', () => {
+        beforeEach(function (done) {
+            request
+                .post(`${mappingUrl}/connect`)
+                .send(connectParam)
+                .expect('Content-Type', /json/)
+                .expect(200)
+                .end((err, res) => {
+                    if (err) throw err;
+                    assert(res.body.data, connectParam);
+                    return done();
+                });
+        });
+        it('Retrieve Meta', (done) => {
+            request
+                .get(`${mappingUrl}/meta`)
+                .expect('Content-Type', /json/)
+                .expect(200)
+                .end((err, res) => {
+                    console.log(res.body)
+                    if (err) throw err;
+                    return done();
+                });
+        });
     });
 });
