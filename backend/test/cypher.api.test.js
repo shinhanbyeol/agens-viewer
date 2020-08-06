@@ -32,7 +32,7 @@ describe('Cypher Api Test', () => {
                 assert(res.body.data, connectParam);
                 return done();
             });
-      });
+    });
 
     it('Execute Match API', (done) => {
         request
@@ -44,8 +44,9 @@ describe('Cypher Api Test', () => {
                 if (err) {
                     done(err);
                 }
-                assert(res.body.data.rows.length == 10)
-                assert(res.body.data.columns.length == 3)
+                console.log(res.body);
+                assert(res.body.data.rows.length == 10);
+                assert(res.body.data.columns.length == 3);
                 done();
             });
     });
