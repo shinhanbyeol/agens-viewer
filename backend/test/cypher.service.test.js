@@ -1,43 +1,93 @@
-let ag = require('agensgraph');
+const app = require('../server/app');
+const session = require('supertest-session');
+const assert = require('assert').strict;
 
-describe('AgensGraph Driver Test', () => {
-    it('Execute Match API', async () => {
-        let connectionInfo = {
-            host: '192.168.0.68',
-            port: 15432,
-            database: 'covid19',
-            graph: 'corona_spread',
-            user: 'consulting',
-            password: 'bitnine123!',
-        };
+const request = session(app);
 
-        let cmd = "CREATE (a:person {id: 'TEST'}) RETURN a";
+let connectParam = {
+    host: '192.168.0.68',
+    port: 15432,
+    database: 'covid19',
+    graph: 'corona_spread',
+    user: 'consulting',
+    password: 'bitnine123!',
+};
 
-        const client = new ag.Client(connectionInfo);
-        client.connect();
-        client.query(`set graph_path=${connectionInfo.graph}`);
-        let result = await client.query(cmd);
-        await client.end();
+let dbUrl = '/api/v1/db';
+let cypherUrl = '/api/v1/cypher';
 
-        console.log(result)
-    });
+let matchQuery = {cmd: "MATCH(p:person) WHERE p.id = 'TEST' RETURN count(p)"};
+let createQuery = {cmd: "CREATE(p:person {id: 'TEST'})"};
+let deleteQuery = {cmd: "MATCH(p:person) WHERE p.id = 'TEST' DELETE p"};
+let setQuery = {cmd: ""};
+
+describe('Cypher DML Test', () => {
+
+    beforeEach(connectDatabase);
+
+    describe('Cypher Create Test', () => {
+        afterEach('Check create data', executeMatchQuery);
+
+        it('Execute Create', (done) => {
+            request
+                .post(`${cypherUrl}/`)
+                .send(createQuery)
+                .expect('Content-Type', /json/)
+                .expect(200)
+                .end((err, res) => {
+                    if (err) {
+                        done(err);
+                    }
+                    done();
+                });
+        });
+    })
+
+    describe('Cypher Create Test', () => {
+        beforeEach('Check exist data', executeMatchQuery);
+
+        it('Execute Delete', (done) => {
+            request
+                .post(`${cypherUrl}/`)
+                .send(deleteQuery)
+                .expect('Content-Type', /json/)
+                .expect(200)
+                .end((err, res) => {
+                    if (err) {
+                        done(err);
+                    }
+                    done();
+                });
+        });
+
+        afterEach('Check delete data', executeMatchQuery);
+    })
+
 });
 
-
-function convertEdge({ label, id, start, end, props }) {
-    return {
-        label: label,
-        id: `${id.oid}.${id.id}`,
-        start: `${start.oid}.${start.id}`,
-        end: `${end.oid}.${end.id}`,
-        properties: props,
-    };
+function connectDatabase(done)  {
+    request
+        .post(`${dbUrl}/connect`)
+        .send(connectParam)
+        .expect('Content-Type', /json/)
+        .expect(200)
+        .end((err, res) => {
+            if (err) throw err;
+            assert(res.body.data, connectParam);
+            return done();
+        });
 }
 
-function convertVertex({ label, id, props }) {
-    return {
-        label: label,
-        id: `${id.oid}.${id.id}`,
-        properties: props,
-    };
+function executeMatchQuery(done) {
+    request
+        .post(`${cypherUrl}/`)
+        .send(matchQuery)
+        .expect('Content-Type', /json/)
+        .expect(200)
+        .end((err, res) => {
+            if (err) {
+                done(err);
+            }
+            done();
+        });
 }

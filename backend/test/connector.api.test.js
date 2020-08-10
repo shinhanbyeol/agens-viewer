@@ -1,8 +1,9 @@
 const app = require('../server/app');
+const request = require('supertest')
 const session = require('supertest-session');
 const assert = require('assert').strict;
 
-const request = session(app);
+
 
 let connectParam = {
     host: '192.168.0.68',
@@ -17,7 +18,7 @@ describe('Connector Api Test !', () => {
     let mappingUrl = '/api/v1/db';
 
     it('Connect API', (done) => {
-        request
+        request(app)
             .post(`${mappingUrl}/connect`)
             .send(connectParam)
             .expect('Content-Type', /json/)
@@ -29,20 +30,47 @@ describe('Connector Api Test !', () => {
             });
     });
 
-    it('CheckStatus API', (done) => {
-        request
+    it('Check status if disconnected', () => {
+        request(app)
             .get(`${mappingUrl}/`)
             .expect('Content-Type', /json/)
-            .expect(200)
+            .expect(500)
             .end((err, res) => {
-                assert.deepStrictEqual(res.body.data, connectParam);
-                return done();
+                assert(res.body.data == null)
             });
     });
 
-    describe('DatabaseMetadata Api Test !', () => {
+    describe('CheckStatus Api Test !', () => {
+        const sessionRequest = session(app);
         beforeEach(function (done) {
-            request
+            sessionRequest
+                .post(`${mappingUrl}/connect`)
+                .send(connectParam)
+                .expect('Content-Type', /json/)
+                .expect(200)
+                .end((err, res) => {
+                    if (err) throw err;
+                    assert(res.body.data, connectParam);
+                    return done();
+                });
+        });
+        it('CheckStatus API', (done) => {
+            sessionRequest
+                .get(`${mappingUrl}/`)
+                .expect('Content-Type', /json/)
+                .expect(200)
+                .end((err, res) => {
+                    assert.deepStrictEqual(res.body.data, connectParam);
+                    return done();
+                });
+        });
+    });
+
+
+    describe('DatabaseMetadata Api Test !', () => {
+        const sessionRequest = session(app);
+        beforeEach(function (done) {
+            sessionRequest
                 .post(`${mappingUrl}/connect`)
                 .send(connectParam)
                 .expect('Content-Type', /json/)
@@ -54,13 +82,13 @@ describe('Connector Api Test !', () => {
                 });
         });
         it('Retrieve Meta', (done) => {
-            request
+            sessionRequest
                 .get(`${mappingUrl}/meta`)
                 .expect('Content-Type', /json/)
                 .expect(200)
                 .end((err, res) => {
-                    console.log(res.body)
                     if (err) throw err;
+                    assert(!!res.body.data)
                     return done();
                 });
         });
