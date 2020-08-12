@@ -25,7 +25,7 @@ describe('Connector Api Test !', () => {
             .expect(200)
             .end((err, res) => {
                 if (err) throw err;
-                assert.deepStrictEqual(res.body.data, connectParam);
+                assert.deepStrictEqual(res.body, connectParam);
                 return done();
             });
     });
@@ -36,7 +36,7 @@ describe('Connector Api Test !', () => {
             .expect('Content-Type', /json/)
             .expect(500)
             .end((err, res) => {
-                assert(res.body.data == null)
+                assert(res.body == null)
             });
     });
 
@@ -50,7 +50,7 @@ describe('Connector Api Test !', () => {
                 .expect(200)
                 .end((err, res) => {
                     if (err) throw err;
-                    assert(res.body.data, connectParam);
+                    assert(res.body, connectParam);
                     return done();
                 });
         });
@@ -60,7 +60,7 @@ describe('Connector Api Test !', () => {
                 .expect('Content-Type', /json/)
                 .expect(200)
                 .end((err, res) => {
-                    assert.deepStrictEqual(res.body.data, connectParam);
+                    assert.deepStrictEqual(res.body, connectParam);
                     return done();
                 });
         });
@@ -77,7 +77,7 @@ describe('Connector Api Test !', () => {
                 .expect(200)
                 .end((err, res) => {
                     if (err) throw err;
-                    assert(res.body.data, connectParam);
+                    assert(res.body, connectParam);
                     return done();
                 });
         });
@@ -88,7 +88,7 @@ describe('Connector Api Test !', () => {
                 .expect(200)
                 .end((err, res) => {
                     if (err) throw err;
-                    assert(!!res.body.data)
+                    assert(!!res.body)
                     return done();
                 });
         });
