@@ -147,4 +147,38 @@ describe('Test Connector Api', () => {
             });
     });
 
+    describe('잘못된 연결 후, 정상 연결 시 잘못된 연결데이터 전달', () => {
+        const sessionRequest = session(app);
+        let wrongParam = {
+            host: '192.168.0.1',
+            port: 1432,
+            database: 'covid19',
+            graph: 'corona_spread',
+            user: 'consulting',
+            password: 'bitnine123!',
+        };
+        before(function (done) {
+            sessionRequest
+                .post(`${mappingUrl}/connect`)
+                .send(wrongParam)
+                .expect('Content-Type', /json/)
+                .expect(500)
+                .end((err, res) => {
+                    if (err) done(err);
+                    done();
+                });
+        });
+        it('정상 연결 요청', (done) => {
+            sessionRequest
+                .post(`${mappingUrl}/connect`)
+                .send(connectParam)
+                .expect('Content-Type', /json/)
+                .expect(200)
+                .end((err, res) => {
+                    if (err) done(err);
+                    assert(res.body, connectParam);
+                    done();
+                });
+        });
+    });
 });
