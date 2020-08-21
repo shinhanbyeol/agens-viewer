@@ -130,6 +130,7 @@ describe('Test Connector Api', () => {
                 .expect(200)
                 .end((err, res) => {
                     if (err) done(err);
+                    console.log(res.body);
                     assert(!!res.body);
                     done();
                 });
