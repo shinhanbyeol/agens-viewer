@@ -31,10 +31,10 @@ describe('Test Connector Api', () => {
 
     it('Execute Wrong Connect', (done) => {
         let wrongParam = {
-            host: '192.168.0.1',
+            host: '192.168.0.68',
             port: 15432,
             database: 'covid19',
-            graph: 'corona_spread',
+            graph: 'corona_spread22',
             user: 'consulting',
             password: 'bitnine123!',
         };
@@ -44,6 +44,7 @@ describe('Test Connector Api', () => {
             .expect(500)
             .end((err, res) => {
                 if (err) done(err);
+                console.log(res.body)
                 done();
             });
     });
@@ -166,6 +167,7 @@ describe('Test Connector Api', () => {
                 .expect(500)
                 .end((err, res) => {
                     if (err) done(err);
+                    console.log(res.body)
                     done();
                 });
         });
