@@ -31,10 +31,10 @@ describe('Test Connector Api', () => {
 
     it('Execute Wrong Connect', (done) => {
         let wrongParam = {
-            host: '192.168.0.1',
+            host: '192.168.0.68',
             port: 15432,
             database: 'covid19',
-            graph: 'corona_spread',
+            graph: 'corona_spread22',
             user: 'consulting',
             password: 'bitnine123!',
         };
@@ -44,6 +44,7 @@ describe('Test Connector Api', () => {
             .expect(500)
             .end((err, res) => {
                 if (err) done(err);
+                console.log(res.body)
                 done();
             });
     });
@@ -58,7 +59,6 @@ describe('Test Connector Api', () => {
                 .expect(200)
                 .end((err, res) => {
                     if (err) done(err);
-                    assert(res.body, connectParam);
                     done();
                 });
         });
@@ -66,9 +66,8 @@ describe('Test Connector Api', () => {
             sessionRequest
                 .get(`${mappingUrl}/disconnect`)
                 .expect('Content-Type', /json/)
-                .expect(500)
+                .expect(200)
                 .end((err, res) => {
-                    assert(res.body == null);
                     done();
                 });
         });
@@ -79,13 +78,10 @@ describe('Test Connector Api', () => {
                 .expect('Content-Type', /json/)
                 .expect(500)
                 .end((err, res) => {
-                    assert(res.body == null);
                     done();
                 });
         });
     });
-
-
 
     describe('Test Status', () => {
         const sessionRequest = session(app);
@@ -135,6 +131,7 @@ describe('Test Connector Api', () => {
                 .expect(200)
                 .end((err, res) => {
                     if (err) done(err);
+                    console.log(res.body);
                     assert(!!res.body);
                     done();
                 });
@@ -148,9 +145,43 @@ describe('Test Connector Api', () => {
             .expect(500)
             .end((err, res) => {
                 if (err) done(err);
-                assert(!res.body);
                 done();
             });
     });
 
+    describe('잘못된 연결 후, 정상 연결 시 잘못된 연결데이터 전달', () => {
+        const sessionRequest = session(app);
+        let wrongParam = {
+            host: '192.168.0.1',
+            port: 1432,
+            database: 'covid19',
+            graph: 'corona_spread',
+            user: 'consulting',
+            password: 'bitnine123!',
+        };
+        before(function (done) {
+            sessionRequest
+                .post(`${mappingUrl}/connect`)
+                .send(wrongParam)
+                .expect('Content-Type', /json/)
+                .expect(500)
+                .end((err, res) => {
+                    if (err) done(err);
+                    console.log(res.body)
+                    done();
+                });
+        });
+        it('정상 연결 요청', (done) => {
+            sessionRequest
+                .post(`${mappingUrl}/connect`)
+                .send(connectParam)
+                .expect('Content-Type', /json/)
+                .expect(200)
+                .end((err, res) => {
+                    if (err) done(err);
+                    assert(res.body, connectParam);
+                    done();
+                });
+        });
+    });
 });

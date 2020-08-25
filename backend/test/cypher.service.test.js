@@ -73,7 +73,7 @@ function connectDatabase(done)  {
         .expect(200)
         .end((err, res) => {
             if (err) throw err;
-            assert(res.body.data, connectParam);
+            assert(res.body, connectParam);
             return done();
         });
 }
