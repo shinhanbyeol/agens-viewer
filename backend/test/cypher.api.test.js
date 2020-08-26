@@ -64,6 +64,7 @@ describe('Cypher Api Test', () => {
                         done(err);
                     }
                     if (!res.body.message) {
+                        console.log(res.body)
                         assert(res.body.rows.length == 10);
                         assert(res.body.columns.length == 3);
                     } else {
