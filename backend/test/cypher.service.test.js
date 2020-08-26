@@ -16,7 +16,8 @@ let connectParam = {
 let dbUrl = '/api/v1/db';
 let cypherUrl = '/api/v1/cypher';
 
-let matchQuery = { cmd: "MATCH(p:person) WHERE p.id = 'TEST' RETURN count(p)" };
+let matchQuery = { cmd: 'match (v)-[r]->(v2) return * limit 1' };
+let countQuery = { cmd: "MATCH(p:person) WHERE p.id = 'TEST' RETURN count(p)" };
 let createQuery = { cmd: "CREATE(p:person {id: 'TEST'})" };
 let deleteQuery = { cmd: "MATCH(p:person) WHERE p.id = 'TEST' DELETE p" };
 let setQuery = { cmd: '' };
@@ -55,6 +56,21 @@ let dropTableQuery = {
 
 describe('Cypher DML Test', () => {
     beforeEach(connectDatabase);
+
+    it('Execute MatchQuery', (done) => {
+        request
+            .post(`${cypherUrl}/`)
+            .send(matchQuery)
+            .expect('Content-Type', /json/)
+            .expect(200)
+            .end((err, res) => {
+                if (err) {
+                    done(err);
+                }
+                console.log(res.body.rows[0])
+                done();
+            });
+    });
 
     it('Execute PathQuery', (done) => {
         request
@@ -157,7 +173,7 @@ function connectDatabase(done) {
 function executeMatchQuery(done) {
     request
         .post(`${cypherUrl}/`)
-        .send(matchQuery)
+        .send(countQuery)
         .expect('Content-Type', /json/)
         .expect(200)
         .end((err, res) => {
