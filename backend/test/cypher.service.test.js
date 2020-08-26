@@ -21,6 +21,8 @@ let createQuery = { cmd: "CREATE(p:person {id: 'TEST'})" };
 let deleteQuery = { cmd: "MATCH(p:person) WHERE p.id = 'TEST' DELETE p" };
 let setQuery = { cmd: '' };
 
+let pathQuery = { cmd: 'match p = (v)- [r]->(v2) return p limit 1;' };
+
 let createTableQuery = {
     cmd:
         'create table categories (categoryid int, categoryname varchar(15), description text, picture bytea);' +
@@ -48,11 +50,25 @@ let dropTableQuery = {
         'drop table regions;' +
         'drop table shippers;' +
         'drop table suppliers;' +
-        'drop table territories;'
+        'drop table territories;',
 };
 
 describe('Cypher DML Test', () => {
     beforeEach(connectDatabase);
+
+    it('Execute PathQuery', (done) => {
+        request
+            .post(`${cypherUrl}/`)
+            .send(pathQuery)
+            .expect('Content-Type', /json/)
+            .expect(200)
+            .end((err, res) => {
+                if (err) {
+                    done(err);
+                }
+                done();
+            });
+    });
 
     describe('Cypher Create Test', () => {
         afterEach('Check create data', executeMatchQuery);
@@ -92,7 +108,7 @@ describe('Cypher DML Test', () => {
         afterEach('Check delete data', executeMatchQuery);
     });
 
-    describe('Cypher DML Test', () => {
+    describe('Cypher DDL Test', () => {
         it('Create Table', (done) => {
             request
                 .post(`${cypherUrl}/`)
