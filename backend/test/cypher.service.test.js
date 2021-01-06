@@ -1,4 +1,4 @@
-const app = require('../server/app');
+const app = require('../app');
 const session = require('supertest-session');
 const assert = require('assert').strict;
 
