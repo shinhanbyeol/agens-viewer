@@ -136,6 +136,18 @@ describe('Test Connector Api', () => {
                     done();
                 });
         });
+        it('Get MetaChart', (done) => {
+            sessionRequest
+                .get(`${mappingUrl}/metaChart`)
+                .expect('Content-Type', /json/)
+                .expect(200)
+                .end((err, res) => {
+                    if (err) done(err);
+                    console.log(res.body);
+                    assert(!!res.body);
+                    done();
+                });
+        });
     });
 
     it('Test Get Metadata NotConnected', (done) => {
