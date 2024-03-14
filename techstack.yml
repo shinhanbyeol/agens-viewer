@@ -1,0 +1,530 @@
+repo_name: shinhanbyeol/agens-viewer
+report_id: 6e25419d49be0eb6f74f9377b70f096c
+version: 0.1
+repo_type: Public
+timestamp: '2024-03-14T04:37:02+00:00'
+requested_by: hwha
+provider: github
+branch: main
+detected_tools_count: 38
+tools:
+- name: CSS 3
+  description: The latest evolution of the Cascading Style Sheets language
+  website_url: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer
+  detection_source: Repo Metadata
+- name: JavaScript
+  description: Lightweight, interpreted, object-oriented language with first-class
+    functions
+  website_url: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer
+  detection_source: Repo Metadata
+- name: Bootstrap
+  description: Simple and flexible HTML, CSS, and JS for popular UI components and
+    interactions
+  website_url: http://getbootstrap.com/
+  version: 4.5.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Front-End Frameworks
+  image_url: https://img.stackshare.io/service/1101/C9QJ7V3X.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/frontend/package-lock.json
+  detection_source: frontend/package.json
+  last_updated_by: hwha
+  last_updated_on: 2020-07-23 07:38:34.000000000 Z
+- name: ExpressJS
+  description: Sinatra inspired web development framework for node.js -- insanely
+    fast, flexible, and simple
+  website_url: http://expressjs.com/
+  version: 4.16.4
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Microframeworks (Backend)
+  image_url: https://img.stackshare.io/service/1163/hashtag.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/backend/package-lock.json
+  detection_source: backend/package.json
+  last_updated_by: hwha
+  last_updated_on: 2020-07-31 07:36:31.000000000 Z
+- name: React
+  description: A JavaScript library for building user interfaces
+  website_url: https://reactjs.org/
+  version: 16.13.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Javascript UI Libraries
+  image_url: https://img.stackshare.io/service/1020/OYIaJ1KK.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/frontend/package-lock.json
+  detection_source: frontend/package.json
+  last_updated_by: KarlJeong
+  last_updated_on: 2020-09-01 00:46:31.000000000 Z
+- name: Redux
+  description: Predictable state container for JavaScript apps
+  website_url: https://redux.js.org/
+  version: 4.0.5
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: State Management Library
+  image_url: https://img.stackshare.io/service/4074/13142323.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/frontend/package-lock.json
+  detection_source: frontend/package.json
+  last_updated_by: hwha
+  last_updated_on: 2020-08-03 04:45:50.000000000 Z
+- name: redux-thunk
+  description: Thunk middleware for Redux
+  website_url: https://github.com/gaearon/redux-thunk
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: State Management Library
+  image_url: https://img.stackshare.io/service/5448/13142323.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/frontend/package.json
+  detection_source: frontend/package.json
+  last_updated_by: hwha
+  last_updated_on: 2020-08-03 04:45:50.000000000 Z
+- name: PostgreSQL
+  description: A powerful, open source object-relational database system
+  website_url: http://www.postgresql.org/
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Databases
+  image_url: https://img.stackshare.io/service/1028/ASOhU5xJ.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/backend/package.json
+  detection_source: backend/package.json
+  last_updated_by: hwha
+  last_updated_on: 2020-07-27 04:17:59.000000000 Z
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer
+  detection_source: Repo Metadata
+- name: Mocha
+  description: Simple, flexible, fun javascript test framework for node.js &amp; the
+    browser
+  website_url: http://mochajs.org/
+  version: 8.1.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Javascript Testing Framework
+  image_url: https://img.stackshare.io/service/832/mocha.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/backend/package-lock.json
+  detection_source: backend/package.json
+  last_updated_by: hwha
+  last_updated_on: 2020-08-20 07:56:49.000000000 Z
+- name: SuperTest
+  description: A library for testing node.js HTTP servers
+  website_url: https://www.npmjs.com/package/supertest
+  version: 4.0.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Javascript Testing Framework
+  image_url: https://img.stackshare.io/no-img-open-source.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/backend/package-lock.json
+  detection_source: backend/package.json
+  last_updated_by: hwha
+  last_updated_on: 2020-07-31 07:36:31.000000000 Z
+- name: Webpack
+  description: A bundler for javascript and friends
+  website_url: http://webpack.js.org
+  version: 4.42.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: JS Build Tools / JS Task Runners
+  image_url: https://img.stackshare.io/service/1682/IMG_4636.PNG
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/frontend/package-lock.json
+  detection_source: frontend/package.json
+  last_updated_by: KarlJeong
+  last_updated_on: 2020-09-01 00:46:31.000000000 Z
+- name: Yarn
+  description: A new package manager for JavaScript
+  website_url: https://yarnpkg.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Front End Package Manager
+  image_url: https://img.stackshare.io/service/5848/44mC-kJ3.jpg
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/frontend/yarn.lock
+  detection_source: frontend/yarn.lock
+  last_updated_by: hwha
+  last_updated_on: 2020-07-23 07:38:34.000000000 Z
+- name: npm
+  description: The package manager for JavaScript.
+  website_url: https://www.npmjs.com/
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Front End Package Manager
+  image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/backend/package.json
+  detection_source: backend/package.json
+  last_updated_by: hwha
+  last_updated_on: 2020-07-27 04:17:59.000000000 Z
+- name: Winston
+  description: a multi-transport async logging library for node.js
+  website_url: https://github.com/winstonjs/winston
+  open_source: false
+  hosted_saas: false
+  image_url: https://img.stackshare.io/service/6668/9682013.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/backend/package.json
+  detection_source: backend/package.json
+  last_updated_by: hwha
+  last_updated_on: 2020-08-25 08:35:49.000000000 Z
+- name: axios
+  description: Promise based HTTP client for the browser and node.js
+  website_url: https://github.com/mzabriskie/axios
+  version: 0.19.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Javascript Utilities & Libraries
+  image_url: https://img.stackshare.io/no-img-open-source.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/frontend/package-lock.json
+  detection_source: frontend/package.json
+  last_updated_by: Karl Jeong
+  last_updated_on: 2020-07-24 07:35:03.000000000 Z
+- name: "@testing-library/jest-dom"
+  description: Custom jest matchers to test the state of the DOM
+  package_url: https://www.npmjs.com/@testing-library/jest-dom
+  version: 4.2.4
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17424/default_1cdcda15ebb7caed879f8340bc212b44c4ec9dac.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/frontend/package-lock.json
+  detection_source: frontend/package.json
+  last_updated_by: hwha
+  last_updated_on: 2020-07-23 07:38:34.000000000 Z
+- name: "@testing-library/react"
+  description: Simple and complete React DOM testing utilities that encourage good
+    testing practices
+  package_url: https://www.npmjs.com/@testing-library/react
+  version: 9.5.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16549/default_d522554c6a41cb28d922d6d3ad32ad4afa0e3bb5.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/frontend/package-lock.json
+  detection_source: frontend/package.json
+  last_updated_by: KarlJeong
+  last_updated_on: 2020-09-01 00:46:31.000000000 Z
+- name: cookie-parser
+  description: Parse HTTP request cookies
+  package_url: https://www.npmjs.com/cookie-parser
+  version: 1.4.5
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16136/default_def3edb85d7fbd20200a5cd7d0a1679e31bc8b3d.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/backend/package-lock.json
+  detection_source: backend/package.json
+  last_updated_by: hwha
+  last_updated_on: 2020-07-31 07:36:31.000000000 Z
+- name: debug
+  description: Small debugging utility
+  package_url: https://www.npmjs.com/debug
+  version: 2.6.9
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15852/default_a2f722724df977d0f7752839e5d8845ab41f69d5.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/backend/package-lock.json
+  detection_source: backend/package.json
+  last_updated_by: hwha
+  last_updated_on: 2020-07-31 07:36:31.000000000 Z
+- name: express
+  description: Fast, unopinionated, minimalist web framework
+  package_url: https://www.npmjs.com/express
+  version: 4.16.4
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15818/default_db4a7791d2f1174547374b9b587bc10fec088a5a.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/backend/package-lock.json
+  detection_source: backend/package.json
+  last_updated_by: hwha
+  last_updated_on: 2020-07-31 07:36:31.000000000 Z
+  vulnerabilities:
+  - name: qs vulnerable to Prototype Pollution
+    cve_id: CVE-2022-24999
+    cve_url: https://github.com/advisories/GHSA-hrpp-h998-j3pp
+    detected_date: Dec 7
+    severity: high
+    first_patched: 4.17.3
+- name: express-session
+  description: Simple session middleware for Express
+  package_url: https://www.npmjs.com/express-session
+  version: 1.17.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16239/default_180418c6fa6cdb8f7a3500f84a8fedb884fcb3fa.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/backend/package-lock.json
+  detection_source: backend/package.json
+  last_updated_by: hwha
+  last_updated_on: 2020-08-20 07:56:49.000000000 Z
+- name: file-saver
+  description: An HTML5 saveAs
+  package_url: https://www.npmjs.com/file-saver
+  version: 2.0.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16795/default_6e51a44775c61dcb2888547ad406a2f0cf2c344e.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/frontend/package-lock.json
+  detection_source: frontend/package.json
+  last_updated_by: Karl Jeong
+  last_updated_on: 2020-08-19 01:38:39.000000000 Z
+- name: http-status
+  description: Interact with HTTP status code
+  package_url: https://www.npmjs.com/http-status
+  version: 1.5.0
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17707/default_7ff152b9bcf219fad0d56c78a016d5bad6a2a526.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/backend/package-lock.json
+  detection_source: backend/package.json
+  last_updated_by: hwha
+  last_updated_on: 2020-12-30 05:25:30.000000000 Z
+- name: json2csv
+  description: Convert JSON to CSV
+  package_url: https://www.npmjs.com/json2csv
+  version: 5.0.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17719/default_9693d58c90f5c726ee648423687212d2a94266da.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/frontend/package-lock.json
+  detection_source: frontend/package.json
+  last_updated_by: Karl Jeong
+  last_updated_on: 2020-08-19 01:38:39.000000000 Z
+- name: morgan
+  description: HTTP request logger middleware for node.js
+  package_url: https://www.npmjs.com/morgan
+  version: 1.9.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16097/default_c7b204838197013798409fa2b4dafce450edc7fb.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/backend/package-lock.json
+  detection_source: backend/package.json
+  last_updated_by: hwha
+  last_updated_on: 2020-07-31 07:36:31.000000000 Z
+- name: node-uuid
+  description: Rigorous implementation of RFC4122
+  package_url: https://www.npmjs.com/node-uuid
+  version: 1.4.8
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16142/default_ac04a744873b460c4ef30a7450ed0c83223640ab.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/backend/package-lock.json
+  detection_source: backend/package.json
+  last_updated_by: hwha
+  last_updated_on: 2020-12-30 05:25:30.000000000 Z
+- name: npm-run-all
+  description: A CLI tool to run multiple npm-scripts in parallel or sequential
+  package_url: https://www.npmjs.com/npm-run-all
+  version: 4.1.5
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15926/default_b45165a5d30e541ab11711a34a78209b3e8ed7fd.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/backend/package-lock.json
+  detection_source: backend/package.json
+  last_updated_by: hwha
+  last_updated_on: 2020-07-31 07:36:31.000000000 Z
+- name: pegjs
+  description: Parser generator for JavaScript
+  package_url: https://www.npmjs.com/pegjs
+  version: 0.10.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16881/default_7fe969828600a90e84607bfa2a19979e53a0579d.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/backend/package-lock.json
+  detection_source: backend/package.json
+  last_updated_by: hwha
+  last_updated_on: 2020-07-31 07:36:31.000000000 Z
+- name: pg
+  description: PostgreSQL client - pure javascript &amp; libpq with the same API
+  package_url: https://www.npmjs.com/pg
+  version: 8.3.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16197/default_3d197518f6bb529bfcc1b685e2cefbdfe83ff108.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/backend/package-lock.json
+  detection_source: backend/package.json
+  last_updated_by: hwha
+  last_updated_on: 2020-07-27 04:17:59.000000000 Z
+- name: react-bootstrap
+  description: Bootstrap 3 components built with React
+  package_url: https://www.npmjs.com/react-bootstrap
+  version: 1.2.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16383/default_92302d1bbf4c0f67b862869662b4f69002c94aad.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/frontend/package-lock.json
+  detection_source: frontend/package.json
+  last_updated_by: KarlJeong
+  last_updated_on: 2020-09-01 00:46:31.000000000 Z
+- name: react-dom
+  description: React package for working with the DOM
+  package_url: https://www.npmjs.com/react-dom
+  version: 16.13.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15808/default_14fd11531839d935f920b6d55bd6f3528c890ad7.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/frontend/package-lock.json
+  detection_source: frontend/package.json
+  last_updated_by: KarlJeong
+  last_updated_on: 2020-09-01 00:46:31.000000000 Z
+- name: react-redux
+  description: Official React bindings for Redux
+  package_url: https://www.npmjs.com/react-redux
+  version: 7.2.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15984/default_f49d4c116f8ea0155f4d92673b084378bba02760.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/frontend/package-lock.json
+  detection_source: frontend/package.json
+  last_updated_by: KarlJeong
+  last_updated_on: 2020-09-01 00:46:31.000000000 Z
+- name: react-scripts
+  description: Configuration and scripts for Create React App
+  package_url: https://www.npmjs.com/react-scripts
+  version: 3.4.3
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15985/default_8b5680d4e916298d08363c291a0d6e34c07ceb15.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/frontend/package-lock.json
+  detection_source: frontend/package.json
+  last_updated_by: KarlJeong
+  last_updated_on: 2020-09-01 00:46:31.000000000 Z
+- name: serve
+  description: Static file serving and directory listing
+  package_url: https://www.npmjs.com/serve
+  version: 11.3.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16484/default_73c88a18b684e01cbdbf945631a40a44aff5a777.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/frontend/package-lock.json
+  detection_source: frontend/package.json
+  last_updated_by: KarlJeong
+  last_updated_on: 2020-09-01 00:46:31.000000000 Z
+- name: webpack-dev-server
+  description: Serves a webpack app. Updates the browser on changes
+  package_url: https://www.npmjs.com/webpack-dev-server
+  version: 3.11.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15821/default_64690bc3e49bcee57094e51a7a26c620c48dbd82.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/frontend/package-lock.json
+  detection_source: frontend/package.json
+  last_updated_by: KarlJeong
+  last_updated_on: 2020-09-01 00:46:31.000000000 Z
+- name: winston
+  description: A logger for just about everything
+  package_url: https://www.npmjs.com/winston
+  version: 3.3.3
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16003/default_261820f5687b4c88a3e8f95c71b5e8dccd34c1d7.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/backend/package-lock.json
+  detection_source: backend/package.json
+  last_updated_by: hwha
+  last_updated_on: 2020-08-25 08:35:49.000000000 Z
+- name: winston-daily-rotate-file
+  description: A transport for winston which logs to a rotating file each day
+  package_url: https://www.npmjs.com/winston-daily-rotate-file
+  version: 4.5.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17407/default_c11ea7d401c11f11d89301d0302509ab7d72e5ac.png
+  detection_source_url: https://github.com/shinhanbyeol/agens-viewer/blob/main/backend/package-lock.json
+  detection_source: backend/package.json
+  last_updated_by: hwha
+  last_updated_on: 2020-08-25 08:35:49.000000000 Z
